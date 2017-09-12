@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>size</key>
+		<string>1024x768</string>
+		<key>orientation</key>
+		<string>landscape</string>
+		<key>idiom</key>
+		<string>ipad</string>
+		<key>extent</key>
+		<string>full-screen</string>
+		<key>minimum_system_version</key>
+		<string>7.0</string>
+		<key>scale</key>
+		<string>2x</string>
+	</dict>
+	<dict>
+		<key>size</key>
+		<string>1024x768</string>
+		<key>orientation</key>
+		<string>landscape</string>
+		<key>idiom</key>
+		<string>ipad</string>
+		<key>extent</key>
+		<string>full-screen</string>
+		<key>minimum_system_version</key>
+		<string>7.0</string>
+		<key>scale</key>
+		<string>1x</string>
+	</dict>
+</array>
+</plist>

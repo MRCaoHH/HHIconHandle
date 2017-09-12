@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>size</key>
+		<string>736x414</string>
+		<key>orientation</key>
+		<string>landscape</string>
+		<key>idiom</key>
+		<string>iphone</string>
+		<key>extent</key>
+		<string>full-screen</string>
+		<key>minimum_system_version</key>
+		<string>8.0</string>
+		<key>subtype</key>
+		<string>736h</string>
+		<key>scale</key>
+		<string>3x</string>
+	</dict>
+</array>
+</plist>

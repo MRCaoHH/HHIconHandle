@@ -10,14 +10,16 @@ setp 1
 打开终端克隆项目
 
 ```
+git clone https://github.com/MRCaoHH/HHIconHandle.git
 ```
 
 setp 2
 
 ```
-carthage update --platform iOS
+carthage update --platform mac
 ```
 
+如果没安装`carthage`的话可以参考这篇文章:![Carthage的安装和使用](http://www.jianshu.com/p/a734be794019)
 
 
 ### 0x2 app icon

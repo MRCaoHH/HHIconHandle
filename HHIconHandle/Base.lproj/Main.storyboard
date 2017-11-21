@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -52,6 +52,9 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="ic0-fM-pqo"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -69,12 +72,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="490" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-tO-dI2">
+                                <rect key="frame" x="381" y="4" width="94" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundRect" title="转换" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y0L-Mv-4Ni">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="12" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickConvertBtn:" target="XfG-lQ-9wD" id="3vy-WY-jkX"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-cK-AHj">
+                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tips" id="YHa-b9-oqK"/>
+                            </imageView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSl-ea-iTM" customClass="HHFileView" customModule="HHIconHandle" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qk8-9G-Db1">
-                                <rect key="frame" x="152" y="36" width="332" height="228"/>
+                                <rect key="frame" x="155" y="0.0" width="335" height="272"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDw-NR-6lQ">
-                                        <rect key="frame" x="0.0" y="136" width="332" height="92"/>
+                                        <rect key="frame" x="0.0" y="180" width="332" height="92"/>
                                         <subviews>
                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="9iS-ND-crf" userLabel="App Icon">
                                                 <rect key="frame" x="-1" y="75" width="80" height="18"/>
@@ -89,7 +112,7 @@
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FqJ-FQ-CJe">
                                                 <rect key="frame" x="0.0" y="38" width="330" height="33"/>
                                                 <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-f2-LUn" userLabel="iphone app icon">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V6g-f2-LUn" userLabel="iphone app icon">
                                                         <rect key="frame" x="-2" y="16" width="101" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iphone app icon" id="PIs-Xe-77b">
                                                             <font key="font" metaFont="system"/>
@@ -155,7 +178,7 @@
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zTo-UC-ul3">
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="33"/>
                                                 <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-b0-qQO">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gn3-b0-qQO">
                                                         <rect key="frame" x="-2" y="16" width="86" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ipad app icon" id="4bX-cT-foi">
                                                             <font key="font" metaFont="system"/>
@@ -231,13 +254,13 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nph-0a-YRq">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="170"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TsT-kd-Akq">
-                                                <rect key="frame" x="0.0" y="0.0" width="210" height="126"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="170"/>
                                                 <subviews>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="v7h-3w-6sr">
-                                                        <rect key="frame" x="-1" y="109" width="107" height="18"/>
+                                                        <rect key="frame" x="-1" y="153" width="107" height="18"/>
                                                         <buttonCell key="cell" type="radio" title="Launch Image" bezelStyle="regularSquare" imagePosition="right" inset="2" id="Ud2-tn-ctO">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -246,7 +269,52 @@
                                                             <action selector="clickLaunchImageBtn:" target="XfG-lQ-9wD" id="2g2-ij-tr2"/>
                                                         </connections>
                                                     </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvX-Og-y6Z">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vAh-ZJ-14e">
+                                                        <rect key="frame" x="-2" y="132" width="109" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iOS 11.0 and later" id="C4O-sU-E8v">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQn-cM-NYY">
+                                                        <rect key="frame" x="0.0" y="110" width="219" height="17"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XRP-NK-f64">
+                                                                <rect key="frame" x="-2" y="0.0" width="58" height="17"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iphoneX:" id="eTa-V3-OYb">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Iuw-rA-gYJ">
+                                                                <rect key="frame" x="60" y="1" width="68" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Portrait" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Kci-SM-i7m">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="mIp-En-xFA">
+                                                                <rect key="frame" x="132" y="1" width="89" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="Landscape" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="iZa-P5-Sp0">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                        </subviews>
+                                                        <visibilityPriorities>
+                                                            <integer value="1000"/>
+                                                            <integer value="1000"/>
+                                                            <integer value="1000"/>
+                                                        </visibilityPriorities>
+                                                        <customSpacing>
+                                                            <real value="3.4028234663852886e+38"/>
+                                                            <real value="3.4028234663852886e+38"/>
+                                                            <real value="3.4028234663852886e+38"/>
+                                                        </customSpacing>
+                                                    </stackView>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XvX-Og-y6Z">
                                                         <rect key="frame" x="-2" y="88" width="105" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iOS 8.0 and later" id="bZy-DY-hxh">
                                                             <font key="font" metaFont="system"/>
@@ -257,7 +325,7 @@
                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7tv-L8-2al">
                                                         <rect key="frame" x="0.0" y="66" width="210" height="17"/>
                                                         <subviews>
-                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-EE-Whz">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-EE-Whz">
                                                                 <rect key="frame" x="-2" y="0.0" width="49" height="17"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iphone:" id="TNF-ph-OLs">
                                                                     <font key="font" metaFont="system"/>
@@ -291,7 +359,7 @@
                                                             <real value="3.4028234663852886e+38"/>
                                                         </customSpacing>
                                                     </stackView>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-PU-5u1">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2nz-PU-5u1">
                                                         <rect key="frame" x="-2" y="44" width="103" height="17"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iOS 7.0 and later" id="2vT-dd-yAu">
                                                             <font key="font" metaFont="system"/>
@@ -302,7 +370,7 @@
                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4bl-q5-Tz9">
                                                         <rect key="frame" x="0.0" y="22" width="117" height="17"/>
                                                         <subviews>
-                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at6-Oq-1N3">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="at6-Oq-1N3">
                                                                 <rect key="frame" x="-2" y="0.0" width="49" height="17"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="iphone:" id="803-Lv-edn">
                                                                     <font key="font" metaFont="system"/>
@@ -330,7 +398,7 @@
                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTr-xi-C3G">
                                                         <rect key="frame" x="0.0" y="0.0" width="195" height="17"/>
                                                         <subviews>
-                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj5-dI-Hpv">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jj5-dI-Hpv">
                                                                 <rect key="frame" x="-2" y="0.0" width="34" height="17"/>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ipad:" id="h4X-Us-jsR">
                                                                     <font key="font" metaFont="system"/>
@@ -372,8 +440,12 @@
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
@@ -383,7 +455,7 @@
                                                 </customSpacing>
                                             </stackView>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9x-er-tYk">
-                                                <rect key="frame" x="230" y="53" width="96" height="73"/>
+                                                <rect key="frame" x="239" y="97" width="96" height="73"/>
                                                 <subviews>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="dWD-cR-DN6">
                                                         <rect key="frame" x="-1" y="56" width="99" height="18"/>
@@ -450,26 +522,6 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-tO-dI2">
-                                <rect key="frame" x="371" y="8" width="94" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" title="转换" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y0L-Mv-4Ni">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="12" name=".PingFangSC-Regular"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="clickConvertBtn:" target="XfG-lQ-9wD" id="3vy-WY-jkX"/>
-                                </connections>
-                            </button>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-cK-AHj">
-                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="tips" id="YHa-b9-oqK"/>
-                            </imageView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSl-ea-iTM" customClass="HHFileView" customModule="HHIconHandle" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="151" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
                         </subviews>
                     </view>
                     <connections>
@@ -489,14 +541,16 @@
                         <outlet property="phoneIcon" destination="Ezc-1y-S55" id="Fob-M2-Mgc"/>
                         <outlet property="phoneIcon7" destination="G0b-W2-3YS" id="ElW-OM-f1O"/>
                         <outlet property="phoneIconNone" destination="Heo-OC-m4l" id="A0A-eV-yxe"/>
+                        <outlet property="phoneLandscape11" destination="mIp-En-xFA" id="wPb-7K-Jtc"/>
                         <outlet property="phoneLandscape8" destination="mjL-Is-P0F" id="776-gW-Umo"/>
+                        <outlet property="phonePortrait11" destination="Iuw-rA-gYJ" id="wZB-LK-hLo"/>
                         <outlet property="phonePortrait7" destination="4vq-fd-iKy" id="b24-Hs-rHw"/>
                         <outlet property="phonePortrait8" destination="ReG-u4-xxz" id="bEq-Or-tqZ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="696"/>
+            <point key="canvasLocation" x="86" y="689"/>
         </scene>
     </scenes>
     <resources>

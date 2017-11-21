@@ -30,6 +30,7 @@ class ViewController: NSViewController,NSComboBoxDelegate,HHFileViewDelegate {
 //    }
     
     enum HHLauchImageType {
+        case phonePortrait11//phone iOS 8 系统竖屏启动图
         case phonePortrait8//phone iOS 8 系统竖屏启动图
         case phoneLandscape8//phone iOS 8 系统横屏启动图
         case phonePortrait7//phone iOS 7 系统竖屏启动图
@@ -70,6 +71,11 @@ class ViewController: NSViewController,NSComboBoxDelegate,HHFileViewDelegate {
     @IBOutlet weak var padIcon: NSButton!
     /// pad icon 7
     @IBOutlet weak var padIcon7: NSButton!
+    
+    /// iphoneX launch image portrait for ios 11
+    @IBOutlet weak var phonePortrait11: NSButton!
+    /// iphoneX launch image landscape for ios 11
+    @IBOutlet weak var phoneLandscape11: NSButton!
     
     /// phone launch image portrait for ios 8
     @IBOutlet weak var phonePortrait8: NSButton!
@@ -199,6 +205,8 @@ class ViewController: NSViewController,NSComboBoxDelegate,HHFileViewDelegate {
         customIcon3.isEnabled = customIcon.state == 0 ? false : true
         
         //Launch Image
+        phoneLandscape11.isEnabled = launchImg.state == 0 ? false : true
+        phonePortrait11.isEnabled = launchImg.state == 0 ? false : true
         padPortrait7.isEnabled = launchImg.state == 0 ? false : true
         padLandscape7.isEnabled = launchImg.state == 0 ? false : true
         phonePortrait7.isEnabled = launchImg.state == 0 ? false : true
@@ -533,6 +541,14 @@ class ViewController: NSViewController,NSComboBoxDelegate,HHFileViewDelegate {
         
         if padLandscape7.state == 1 {
             iconList += HHLoadConfig.launchScreenList(fileName: "HHLSPadLandscape7")
+        }
+        
+        if phonePortrait11.state == 1 {
+            iconList += HHLoadConfig.launchScreenList(fileName: "HHLSPhonePortrait11")
+        }
+        
+        if phoneLandscape11.state == 1 {
+            iconList += HHLoadConfig.launchScreenList(fileName: "HHLSPhoneLandscape11")
         }
         
         return iconList
